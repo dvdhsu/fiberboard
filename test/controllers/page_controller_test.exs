@@ -1,5 +1,5 @@
-defmodule Plywood.PageControllerTest do
-  use Plywood.ConnCase
+defmodule Fiberboard.PageControllerTest do
+  use Fiberboard.ConnCase
 
   test "GET /" do
     conn = get conn(), "/"

@@ -1,4 +1,4 @@
-defmodule Plywood.Repo.Migrations.CreateUser do
+defmodule Fiberboard.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

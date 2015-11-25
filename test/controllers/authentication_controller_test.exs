@@ -1,13 +1,13 @@
-defmodule Plywood.AuthenticationControllerTest do
-  use Plywood.ConnCase
+defmodule Fiberboard.AuthenticationControllerTest do
+  use Fiberboard.ConnCase
 
-  alias Plywood.User
+  alias Fiberboard.User
 
   setup do
     conn = conn() |> put_req_header("accept", "application/json")
     facebook_user = %{
-      token: Application.get_env(:plywood, :facebook_test_token),
-      email: Application.get_env(:plywood, :facebook_test_email),
+      token: Application.get_env(:fiberboard, :facebook_test_token),
+      email: Application.get_env(:fiberboard, :facebook_test_email),
     }
     conn = post conn, "/api/auth/login", %{ facebook_token: facebook_user[:token] }
     {:ok, conn: conn, facebook_user: facebook_user}

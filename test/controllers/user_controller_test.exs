@@ -1,7 +1,7 @@
-defmodule Plywood.UserControllerTest do
-  use Plywood.ConnCase
+defmodule Fiberboard.UserControllerTest do
+  use Fiberboard.ConnCase
 
-  alias Plywood.User
+  alias Fiberboard.User
   @valid_attrs %{auth_tokens: [], email: "some@email.com", facebook_id: "some content", facebook_token: "some content"}
   @invalid_attrs %{}
 

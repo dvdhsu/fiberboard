@@ -1,5 +1,5 @@
-defmodule Plywood.ErrorView do
-  use Plywood.Web, :view
+defmodule Fiberboard.ErrorView do
+  use Fiberboard.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

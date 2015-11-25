@@ -1,7 +1,7 @@
-defmodule Plywood.UserController do
-  use Plywood.Web, :controller
+defmodule Fiberboard.UserController do
+  use Fiberboard.Web, :controller
 
-  alias Plywood.User
+  alias Fiberboard.User
 
   plug :scrub_params, "user" when action in [:create, :update]
 
@@ -25,7 +25,7 @@ defmodule Plywood.UserController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Plywood.ChangesetView, "error.json", changeset: changeset)
+        |> render(Fiberboard.ChangesetView, "error.json", changeset: changeset)
     end
   end
 

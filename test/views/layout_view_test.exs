@@ -1,3 +1,3 @@
-defmodule Plywood.LayoutViewTest do
-  use Plywood.ConnCase, async: true
+defmodule Fiberboard.LayoutViewTest do
+  use Fiberboard.ConnCase, async: true
 end

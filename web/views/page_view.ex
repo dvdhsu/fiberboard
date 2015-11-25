@@ -1,3 +1,3 @@
-defmodule Plywood.PageView do
-  use Plywood.Web, :view
+defmodule Fiberboard.PageView do
+  use Fiberboard.Web, :view
 end

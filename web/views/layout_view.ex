@@ -1,3 +1,3 @@
-defmodule Plywood.LayoutView do
-  use Plywood.Web, :view
+defmodule Fiberboard.LayoutView do
+  use Fiberboard.Web, :view
 end

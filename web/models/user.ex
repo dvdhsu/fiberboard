@@ -1,5 +1,5 @@
-defmodule Plywood.User do
-  use Plywood.Web, :model
+defmodule Fiberboard.User do
+  use Fiberboard.Web, :model
 
   schema "users" do
     field :email, :string

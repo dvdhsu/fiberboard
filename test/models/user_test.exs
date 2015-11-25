@@ -1,7 +1,7 @@
-defmodule Plywood.UserTest do
-  use Plywood.ModelCase
+defmodule Fiberboard.UserTest do
+  use Fiberboard.ModelCase
 
-  alias Plywood.User
+  alias Fiberboard.User
 
   @valid_attrs %{auth_tokens: [], email: "some@email.com", facebook_id: "some content", facebook_token: "some content"}
   @invalid_attrs %{}
