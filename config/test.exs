@@ -19,7 +19,8 @@ config :plywood, Plywood.Repo,
   password: "postgres",
   database: "plywood_test",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  pool: Ecto.Adapters.SQL.Sandbox,
+  extensions: [{Geo.PostGIS.Extension, library: Geo}]
 
 # import the secrets file
 import_config "test.secret.exs"
