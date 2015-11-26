@@ -9,3 +9,13 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias Fiberboard.Repo
+alias Fiberboard.City
+
+london_center = %Geo.Point{coordinates: {-0.102216, 51.51786}, srid: 4326}
+london_params = %{center: london_center, name: "London"}
+
+changeset = City.changeset(%City{}, london_params)
+
+Repo.insert(changeset)
