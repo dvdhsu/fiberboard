@@ -17,16 +17,37 @@ alias Fiberboard.Attraction
 
 london_center = %Geo.Point{coordinates: {-0.102216, 51.51786}, srid: 4326}
 london_params = %{center: london_center, name: "London"}
-
 changeset = City.changeset(%City{}, london_params)
-
 {:ok, london} = Repo.insert(changeset)
 
 parks_params = %{name: "Parks"}
 changeset = AttractionCategory.changeset(%AttractionCategory{}, parks_params)
 {:ok, parks} = Repo.insert(changeset)
 
+landmarks_params = %{name: "Landmarks"}
+changeset = AttractionCategory.changeset(%AttractionCategory{}, landmarks_params)
+{:ok, landmarks} = Repo.insert(changeset)
+
 hyde_park_coords = %Geo.Point{coordinates: {-0.177704, 51.507776}, srid: 4326}
-hyde_park_params = %{name: "Hyde Park", category_attraction_id: parks.id, city_id: london.id, location: hyde_park_coords}
+hyde_park_params = %{
+  name: "Hyde Park",
+  attraction_category_id: parks.id,
+  city_id: london.id,
+  location: hyde_park_coords,
+  description: "Hyde Park!!!!"
+}
+
 changeset = Attraction.changeset(%Attraction{}, hyde_park_params)
-hyde_park = Repo.insert(changeset)
+{:ok, hyde_park} = Repo.insert(changeset)
+
+tower_bridge_coords = %Geo.Point{coordinates: {-0.075440, 51.505441}, srid: 4326}
+tower_bridge_params = %{
+  name: "Tower Bridge",
+  attraction_category_id: landmarks.id,
+  city_id: london.id,
+  location: tower_bridge_coords,
+  description: "Tower Bridge!!!!"
+}
+
+changeset = Attraction.changeset(%Attraction{}, tower_bridge_params)
+{:ok, tower_bridge} = Repo.insert(changeset)
