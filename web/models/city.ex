@@ -5,6 +5,8 @@ defmodule Fiberboard.City do
     field :name, :string
     field :center, Geo.Point
 
+    has_many :attractions, Fiberboard.Attraction
+
     timestamps
   end
 

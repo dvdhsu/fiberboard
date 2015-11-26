@@ -4,6 +4,8 @@ defmodule Fiberboard.AttractionCategory do
   schema "attraction_categories" do
     field :name, :string
 
+    has_many :attractions, Fiberboard.Attraction
+
     timestamps
   end
 
