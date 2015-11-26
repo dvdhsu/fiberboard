@@ -6,13 +6,14 @@ defmodule Fiberboard.Attraction do
     field :description, :string
     field :image_url, :string
     field :location, Geo.Point
+    field :address, :string
     belongs_to :city, Fiberboard.City
     belongs_to :attraction_category, Fiberboard.AttractionCategory
 
     timestamps
   end
 
-  @required_fields ~w(name description location city_id attraction_category_id image_url)
+  @required_fields ~w(name description location city_id attraction_category_id image_url address)
   @optional_fields ~w()
 
   @doc """

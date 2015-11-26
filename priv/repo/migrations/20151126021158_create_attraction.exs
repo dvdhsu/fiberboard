@@ -9,6 +9,7 @@ defmodule Fiberboard.Repo.Migrations.CreateAttraction do
       add :city_id, references(:cities)
       add :attraction_category_id, references(:attraction_categories)
       add :location, :geometry
+      add :address, :string
 
       timestamps
     end

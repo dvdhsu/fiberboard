@@ -36,6 +36,7 @@ hyde_park_params = %{
   location: hyde_park_coords,
   description: "Hyde Park!!!!",
   image_url: "http://www.smartlayover.com/slportal/media/hyde-park.jpg",
+  address: "Hyde Park, London, United Kingdom",
 }
 
 changeset = Attraction.changeset(%Attraction{}, hyde_park_params)
@@ -49,6 +50,7 @@ tower_bridge_params = %{
   location: tower_bridge_coords,
   description: "Tower Bridge!!!!",
   image_url: "http://chsrentals.com/wp-content/uploads/2015/06/tower-bridge.jpg",
+  address: "Tower Bridge Rd, London SE1 2UP, United Kingdom",
 }
 
 changeset = Attraction.changeset(%Attraction{}, tower_bridge_params)
