@@ -27,5 +27,6 @@ defmodule Fiberboard.Router do
       post "/logout", AuthenticationController, :logout
     end
     resources "/users", UserController, except: [:new, :edit]
+    resources "/cities", CityController
   end
 end
