@@ -4,6 +4,7 @@ defmodule Fiberboard.Attraction do
   schema "attractions" do
     field :name, :string
     field :description, :string
+    field :image_url, :string
     field :location, Geo.Point
     belongs_to :city, Fiberboard.City
     belongs_to :attraction_category, Fiberboard.AttractionCategory
@@ -11,7 +12,7 @@ defmodule Fiberboard.Attraction do
     timestamps
   end
 
-  @required_fields ~w(name description location city_id attraction_category_id)
+  @required_fields ~w(name description location city_id attraction_category_id image_url)
   @optional_fields ~w()
 
   @doc """

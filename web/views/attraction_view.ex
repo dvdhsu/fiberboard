@@ -7,6 +7,6 @@ defmodule Fiberboard.AttractionView do
 
   def render("attraction.json", %{attraction: attraction}) do
     %{id: attraction.id, name: attraction.name, category_id: attraction.attraction_category_id,
-      description: attraction.description, location: Geo.JSON.encode(attraction.location)}
+      description: attraction.description, location: Geo.JSON.encode(attraction.location), image_url: attraction.image_url}
   end
 end

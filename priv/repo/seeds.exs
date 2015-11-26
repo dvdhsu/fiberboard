@@ -34,7 +34,8 @@ hyde_park_params = %{
   attraction_category_id: parks.id,
   city_id: london.id,
   location: hyde_park_coords,
-  description: "Hyde Park!!!!"
+  description: "Hyde Park!!!!",
+  image_url: "http://www.smartlayover.com/slportal/media/hyde-park.jpg",
 }
 
 changeset = Attraction.changeset(%Attraction{}, hyde_park_params)
@@ -46,7 +47,8 @@ tower_bridge_params = %{
   attraction_category_id: landmarks.id,
   city_id: london.id,
   location: tower_bridge_coords,
-  description: "Tower Bridge!!!!"
+  description: "Tower Bridge!!!!",
+  image_url: "http://chsrentals.com/wp-content/uploads/2015/06/tower-bridge.jpg",
 }
 
 changeset = Attraction.changeset(%Attraction{}, tower_bridge_params)
