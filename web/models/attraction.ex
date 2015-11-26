@@ -11,7 +11,7 @@ defmodule Fiberboard.Attraction do
     timestamps
   end
 
-  @required_fields ~w(name description location)
+  @required_fields ~w(name description location city_id attraction_category_id)
   @optional_fields ~w()
 
   @doc """
