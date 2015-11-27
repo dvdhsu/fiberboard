@@ -10,7 +10,7 @@ defmodule Fiberboard.Router do
   end
 
   pipeline :api do
-    plug CORSPlug, [origin: "http://localhost:10555"]
+    plug CORSPlug, [origin: "*"]
     plug :accepts, ["json"]
   end
 
