@@ -1,0 +1,38 @@
+<h2>Show attraction</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @attraction.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @attraction.description %>
+  </li>
+
+  <li>
+    <strong>Image url:</strong>
+    <%= @attraction.image_url %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @attraction.city_id %>
+  </li>
+
+  <li>
+    <strong>Attraction category:</strong>
+    <%= @attraction.attraction_category_id %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @attraction.address %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: attraction_path(@conn, :edit, @attraction) %>
+<%= link "Back", to: attraction_path(@conn, :index) %>

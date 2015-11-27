@@ -1,0 +1,34 @@
+<h2>Listing attractions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th>City</th>
+      <th>Attraction category</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for attraction <- @attractions do %>
+    <tr>
+      <td><%= attraction.name %></td>
+      <td><%= attraction.description %></td>
+      <td><%= attraction.image_url %></td>
+      <td><%= attraction.city_id %></td>
+      <td><%= attraction.attraction_category_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: attraction_path(@conn, :show, attraction), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: attraction_path(@conn, :edit, attraction), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: attraction_path(@conn, :delete, attraction), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New attraction", to: attraction_path(@conn, :new) %>
