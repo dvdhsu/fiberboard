@@ -1,23 +1,8 @@
 <script src="<%= static_path(@conn, "/geocode.js") %>"></script>
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBLkne91maL17td-uiUAp8GnwjK2c2_iU&signed_in=true&callback=initMap&libraries=places" async defer></script>
-
 <h2>New attraction</h2>
 
 <%= render "form.html", changeset: @changeset,
                         action: attraction_path(@conn, :create) %>
 
-<div id="map"></div>
 <%= link "Back", to: attraction_path(@conn, :index) %>
 
-<style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 300px;
-        width: 600px;
-      }
-</style>

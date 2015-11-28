@@ -1,3 +1,4 @@
+<script src="<%= static_path(@conn, "/geocode.js") %>"></script>
 <h2>Edit attraction</h2>
 
 <%= render "form.html", changeset: @changeset,

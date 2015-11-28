@@ -1,3 +1,6 @@
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBLkne91maL17td-uiUAp8GnwjK2c2_iU&signed_in=true&callback=initMap&libraries=places" async defer></script>
+
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
@@ -49,3 +52,16 @@
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<div id="map"></div>
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 300px;
+        width: 600px;
+      }
+</style>
