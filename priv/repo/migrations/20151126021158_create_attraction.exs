@@ -4,8 +4,8 @@ defmodule Fiberboard.Repo.Migrations.CreateAttraction do
   def change do
     create table(:attractions) do
       add :name, :string
-      add :description, :string
-      add :image_url, :string
+      add :description, :text
+      add :image_url, :text
       add :city_id, references(:cities)
       add :attraction_category_id, references(:attraction_categories)
       add :location, :geometry
