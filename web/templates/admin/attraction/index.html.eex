@@ -18,8 +18,8 @@
       <td><%= attraction.name %></td>
       <td><%= attraction.description %></td>
       <td><%= attraction.image_url %></td>
-      <td><%= attraction.city_id %></td>
-      <td><%= attraction.attraction_category_id %></td>
+      <td><%= attraction.city.name %></td>
+      <td><%= attraction.attraction_category.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: attraction_path(@conn, :show, attraction), class: "btn btn-default btn-xs" %>

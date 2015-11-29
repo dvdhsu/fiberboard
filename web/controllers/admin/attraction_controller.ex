@@ -6,13 +6,15 @@ defmodule Fiberboard.Admin.AttractionController do
   plug :scrub_params, "attraction" when action in [:create, :update]
 
   def index(conn, _params) do
-    attractions = Repo.all(Attraction)
+    attractions = Repo.all(Attraction) |> Repo.preload([:city, :attraction_category])
     render(conn, "index.html", attractions: attractions)
   end
 
   def new(conn, _params) do
     changeset = Attraction.changeset(%Attraction{})
-    render(conn, "new.html", changeset: changeset)
+    cities_dict = List.foldl(Repo.all(Fiberboard.City), %{}, fn (c, acc) -> Dict.put(acc, c.name, c.id) end)
+    categories_dict = List.foldl(Repo.all(Fiberboard.AttractionCategory), %{}, fn (c, acc) -> Dict.put(acc, c.name, c.id) end)
+    render(conn, "new.html", changeset: changeset, cities_dict: cities_dict, categories_dict: categories_dict)
   end
 
   def create(conn, %{"attraction" => attraction_params}) do
@@ -26,7 +28,9 @@ defmodule Fiberboard.Admin.AttractionController do
         |> put_flash(:info, "Attraction created successfully.")
         |> redirect(to: attraction_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        cities_dict = List.foldl(Repo.all(Fiberboard.City), %{}, fn (c, acc) -> Dict.put(acc, c.name, c.id) end)
+        categories_dict = List.foldl(Repo.all(Fiberboard.AttractionCategory), %{}, fn (c, acc) -> Dict.put(acc, c.name, c.id) end)
+        render(conn, "new.html", changeset: changeset, cities_dict: cities_dict, categories_dict: categories_dict)
     end
   end
 
@@ -38,7 +42,9 @@ defmodule Fiberboard.Admin.AttractionController do
   def edit(conn, %{"id" => id}) do
     attraction = Repo.get!(Attraction, id)
     changeset = Attraction.changeset(attraction)
-    render(conn, "edit.html", attraction: attraction, changeset: changeset)
+    cities_dict = List.foldl(Repo.all(Fiberboard.City), %{}, fn (c, acc) -> Dict.put(acc, c.name, c.id) end)
+    categories_dict = List.foldl(Repo.all(Fiberboard.AttractionCategory), %{}, fn (c, acc) -> Dict.put(acc, c.name, c.id) end)
+    render(conn, "edit.html",  attraction: attraction, changeset: changeset, cities_dict: cities_dict, categories_dict: categories_dict)
   end
 
   def update(conn, %{"id" => id, "attraction" => attraction_params}) do

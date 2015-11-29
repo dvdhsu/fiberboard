@@ -1,7 +1,7 @@
 <script src="<%= static_path(@conn, "/geocode.js") %>"></script>
 <h2>Edit attraction</h2>
 
-<%= render "form.html", changeset: @changeset,
-                        action: attraction_path(@conn, :update, @attraction) %>
+<%= render "form.html", changeset: @changeset, cities_dict: @cities_dict,
+  categories_dict: @categories_dict, action: attraction_path(@conn, :update, @attraction) %>
 
 <%= link "Back", to: attraction_path(@conn, :index) %>

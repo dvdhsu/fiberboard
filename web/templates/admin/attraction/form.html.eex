@@ -34,13 +34,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBLkne91maL17td-uiUAp8Gnw
   </div>
 
   <div class="form-group">
-    <%= label f, :city_id, "City ID", class: "control-label" %>
-    <%= text_input f, :city_id, class: "form-control" %>
+    <%= label f, :city_id, "City", class: "control-label" %>
+    <%= select(f, :city_id, @cities_dict) %>
   </div>
 
   <div class="form-group">
     <%= label f, :attraction_category_id, "Attraction Category ID", class: "control-label" %>
-    <%= text_input f, :attraction_category_id, class: "form-control" %>
+    <%= select(f, :attraction_category_id, @categories_dict) %>
   </div>
 
   <div class="form-group">
