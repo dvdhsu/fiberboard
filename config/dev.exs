@@ -43,4 +43,4 @@ config :fiberboard, Fiberboard.Repo,
   extensions: [{Geo.PostGIS.Extension, library: Geo}]
 
 # import the secrets file
-import_config "dev.secret.exs"
+# import_config "dev.secret.exs"

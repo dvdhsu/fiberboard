@@ -1,0 +1,3 @@
+#!/bin/bash
+./scripts/stop_prod
+/.scripts/start_prod

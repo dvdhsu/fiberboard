@@ -25,3 +25,6 @@ erl_crash.dump
 
 *.swp
 *~
+
+nohup.out
+proc_pid

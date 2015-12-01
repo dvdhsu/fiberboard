@@ -1,0 +1,4 @@
+!/bin/bash
+rm nohup.out
+nohup mix phoenix.server &
+echo $! > proc_pid
