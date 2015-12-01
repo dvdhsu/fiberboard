@@ -1,0 +1,13 @@
+<h2>Show attraction category</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @attraction_category.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: attraction_category_path(@conn, :edit, @attraction_category) %>
+<%= link "Back", to: attraction_category_path(@conn, :index) %>

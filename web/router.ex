@@ -17,6 +17,7 @@ defmodule Fiberboard.Router do
   scope "/", Fiberboard do
     pipe_through :browser # Use the default browser stack
     resources "/attractions", Admin.AttractionController
+    resources "/attraction_categories", Admin.AttractionCategoryController
 
     get "/", PageController, :index
   end

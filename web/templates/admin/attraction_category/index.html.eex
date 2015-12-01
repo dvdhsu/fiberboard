@@ -1,0 +1,26 @@
+<h2>Listing attraction categories</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for attraction_category <- @attraction_categories do %>
+    <tr>
+      <td><%= attraction_category.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: attraction_category_path(@conn, :show, attraction_category), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: attraction_category_path(@conn, :edit, attraction_category), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: attraction_category_path(@conn, :delete, attraction_category), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New attraction category", to: attraction_category_path(@conn, :new) %>

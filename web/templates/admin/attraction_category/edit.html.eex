@@ -1,0 +1,6 @@
+<h2>Edit attraction category</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: attraction_category_path(@conn, :update, @attraction_category) %>
+
+<%= link "Back", to: attraction_category_path(@conn, :index) %>
