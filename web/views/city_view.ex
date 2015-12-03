@@ -12,6 +12,7 @@ defmodule Fiberboard.CityView do
   end
 
   def render("city.json", %{city: city}) do
-    %{id: city.id, name: city.name, center: Geo.JSON.encode(city.center)}
+    %{id: city.id, name: city.name, center: Geo.JSON.encode(city.center),
+      cover_photo_url: city.cover_photo_url}
   end
 end
