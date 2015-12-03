@@ -3,6 +3,7 @@ defmodule Fiberboard.City do
 
   schema "cities" do
     field :name, :string
+    field :cover_photo_url, :string
     field :center, Geo.Point
 
     has_many :attractions, Fiberboard.Attraction
@@ -10,7 +11,7 @@ defmodule Fiberboard.City do
     timestamps
   end
 
-  @required_fields ~w(name center)
+  @required_fields ~w(name center cover_photo_url)
   @optional_fields ~w()
 
   @doc """

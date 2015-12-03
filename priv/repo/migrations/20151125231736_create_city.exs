@@ -5,6 +5,7 @@ defmodule Fiberboard.Repo.Migrations.CreateCity do
     create table(:cities) do
       add :name, :string
       add :center, :geometry
+      add :cover_photo_url, :text
 
       timestamps
     end

@@ -16,7 +16,8 @@ alias Fiberboard.AttractionCategory
 alias Fiberboard.Attraction
 
 london_center = %Geo.Point{coordinates: {-0.102216, 51.51786}, srid: 4326}
-london_params = %{center: london_center, name: "London"}
+london_params = %{center: london_center, name: "London",
+  cover_photo_url: "https://a0.muscache.com/ic/discover/1049?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=1300px:730px"}
 changeset = City.changeset(%City{}, london_params)
 {:ok, london} = Repo.insert(changeset)
 
