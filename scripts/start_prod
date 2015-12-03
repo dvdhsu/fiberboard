@@ -1,3 +1,4 @@
 rm nohup.out
 nohup mix phoenix.server > nohup.out &
+echo "starting server at proc pid" $!
 echo $! > proc_pid
