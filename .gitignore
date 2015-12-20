@@ -28,3 +28,11 @@ erl_crash.dump
 
 nohup.out
 proc_pid
+
+
+# Don't include output csvs or foursquare api credentials
+/foursquare_importer/foursquare_secrets.py
+/foursquare_importer/out.csv
+
+# don't include compiled python modules
+*.pyc
