@@ -1,7 +1,6 @@
 defmodule Fiberboard.AuthenticationController do
   use Fiberboard.Web, :controller
 
-  alias Fiberboard.Authentication
   alias Fiberboard.User
 
   def login_or_create(conn, %{ "facebook_token" => facebook_token }) do
