@@ -2,17 +2,27 @@ import foursquare
 import csv
 import sys
 import subprocess
+import googlemaps
 
 from foursquare_secrets import client_id, client_secret
+gmaps = googlemaps.Client(key='AIzaSyDSbRjoLe-fnM_NLiQz_yscPNXoEx05vtw')
+
+def get_coordinates(address):
+  results = gmaps.geocode(address)
+  location = results[0]['geometry']['location']
+  return [location['lat'], location['lng']]
 
 # parse command line args
-if len(sys.argv) != 4:
+if len(sys.argv) != 2:
   print '''
   Incorrect number of arguments - first argument should be the city name, and the second argument should be the id of the city
-  e.g. `python importer.py "London, UK" 51.342 0.78
+  e.g. `python importer.py "London, UK"
   '''
   sys.exit(2)
-[_, CITY_NAME, LAT, LNG] = sys.argv
+[_, CITY_NAME] = sys.argv
+
+# geocode the city to get the coordinates
+[LAT, LNG] = get_coordinates(CITY_NAME)
 
 # run command to create new city
 template_command ="""mix CreateCity "{CITY_NAME}" {LAT} {LNG} | grep 'NEW-CITY-ID' | cut -d "'" -f 2"""
