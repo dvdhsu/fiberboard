@@ -21,7 +21,7 @@ print "Created a new city", CITY_NAME, "with city id:", CITY_ID
 
 # grab data from foursquare
 client = foursquare.Foursquare(client_id=client_id, client_secret=client_secret)
-results = client.venues.explore(params={'near': CITY_NAME, 'venuePhotos': 1, 'limit': 50})
+results = client.venues.explore(params={'near': CITY_NAME, 'venuePhotos': 1, 'limit': 50, 'section': 'sights'})
 items = results['groups'][0]['items']
 
 csv_table = [['city_id', 'attraction_category_id', 'name', 'description', 'image_url', 'address', 'lat', 'lng']]
